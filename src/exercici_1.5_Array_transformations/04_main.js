@@ -1,0 +1,1 @@
+console.log([13, 7, 8, 21].reduce((valorAnterior, valorActual) => valorAnterior += valorActual));

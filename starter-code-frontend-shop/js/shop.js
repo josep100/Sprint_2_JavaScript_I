@@ -78,6 +78,14 @@ const total = 0;
 const buy = (id) => {
     // 1. Loop for to the array products to get the item to add to cart
     // 2. Add found product to the cart array
+    const productToAdd = products.find((product) => product.id === parseInt(id));
+    const existingProductInCart = cart.find((item) => item.id === productToAdd.id);
+
+    if(!existingProductInCart){
+        cart.push({...productToAdd, quantity: 1});
+    } else {
+        existingProductInCart.quantity += 1;
+    }
 }
 
 // Exercise 2
@@ -110,4 +118,12 @@ const removeFromCart = (id) => {
 
 const open_modal = () =>  {
     printCart();
+}
+
+const btns_addCart = document.getElementsByClassName("add-to-cart");
+
+for (const btn_addCart of btns_addCart) {
+    btn_addCart.addEventListener("click", (event) => {
+            buy(event.target.dataset.productId);
+    });
 }

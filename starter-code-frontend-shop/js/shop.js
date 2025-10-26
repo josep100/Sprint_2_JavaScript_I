@@ -90,7 +90,7 @@ const buy = (id) => {
 
 // Exercise 2
 const cleanCart = () =>  {
-
+    cart.splice(0, cart.length);
 }
 
 // Exercise 3

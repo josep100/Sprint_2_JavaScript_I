@@ -96,6 +96,17 @@ const cleanCart = () =>  {
 // Exercise 3
 const calculateTotal = () =>  {
     // Calculate total price of the cart using the "cartList" array
+    const sumaTotal = cart.reduce((total, producto) => {
+        if(producto.quantity > 1){
+                total += (producto.quantity * producto.price);
+        }else{
+            total += producto.price
+        }
+
+        return total;
+    },0);
+
+    return sumaTotal;
 }
 
 // Exercise 4

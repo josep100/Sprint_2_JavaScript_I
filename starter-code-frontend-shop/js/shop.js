@@ -96,17 +96,12 @@ const cleanCart = () =>  {
 // Exercise 3
 const calculateTotal = () =>  {
     // Calculate total price of the cart using the "cartList" array
-    const sumaTotal = cart.reduce((total, producto) => {
-        if(producto.quantity > 1){
-                total += (producto.quantity * producto.price);
-        }else{
-            total += producto.price
-        }
-
-        return total;
-    },0);
-
-    return sumaTotal;
+     return cart.reduce((total, producto) => {
+        const subtotal = producto.subtotalWithDiscount
+            ? producto.subtotalWithDiscount
+            : producto.price * producto.quantity;
+        return total + subtotal;
+    }, 0);
 }
 
 // Exercise 4
@@ -126,6 +121,26 @@ const applyPromotionsCart = () =>  {
 // Exercise 5
 const printCart = () => {
     // Fill the shopping cart modal manipulating the shopping cart dom
+    applyPromotionsCart();
+    const cart_list = document.getElementById("cart_list");
+    const total_price = document.getElementById("total_price");
+    cart_list.innerHTML = "";
+    cart_list.innerHTML = cart.map(producto => `
+        <tr>
+            <td>${producto.name}</td>
+            <td>${producto.price}</td>
+            <td>${producto.quantity}</td>
+            <td>
+                 ${producto.subtotalWithDiscount
+                    ? `${producto.subtotalWithDiscount.toFixed(2)} (${producto.offer.percent}%)`
+                    : producto.price * producto.quantity}
+            </td>
+        </tr>
+    `).join('');
+
+    const total = calculateTotal();
+
+    total_price.textContent = total.toFixed(2);
 }
 
 
@@ -141,9 +156,22 @@ const open_modal = () =>  {
 }
 
 const btns_addCart = document.getElementsByClassName("add-to-cart");
+const cartModal = document.getElementById("cartModal");
+const clean = document.getElementById("clean-cart");
 
 for (const btn_addCart of btns_addCart) {
     btn_addCart.addEventListener("click", (event) => {
             buy(event.target.dataset.productId);
     });
 }
+
+cartModal.addEventListener('shown.bs.modal', () => {
+    printCart();
+});
+
+clean.addEventListener("click", () => {
+    cleanCart();
+    printCart();
+});
+
+

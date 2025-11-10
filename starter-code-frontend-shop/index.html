@@ -38,7 +38,7 @@
 					</button>
 
 					<div class="navbar-nav me-3 me-lg-0 d-flex flex-row align-items-center">
-						<button class="btn btn-outline-dark cart-button" type="button" data-bs-toggle="modal"
+						<button class="btn btn-outline-dark cart-button" id="cart-button" type="button" data-bs-toggle="modal"
 							data-bs-target="#cartModal" data-bs-auto-close="outside" aria-label="Open shopping cart">
 							<i class="fas fa-shopping-cart me-1" aria-hidden="true"></i>
 							<span>Cart</span>
@@ -95,7 +95,7 @@
 					<!-- Product Cards -->
 					<div class="col mb-5">
 						<article class="card product-card h-100">
-							<img class="card-img-top" src="./images/product.svg" alt="Cooking Oil product image"
+							<img class="card-img-top" src="./images/aceite-oliva.jpg" alt="Cooking Oil product image"
 								loading="lazy" />
 							<div class="card-body p-4">
 								<div class="text-center">
@@ -115,7 +115,7 @@
 					</div>
 					<div class="col mb-5">
 						<article class="card product-card h-100">
-							<img class="card-img-top" src="./images/product.svg" alt="Pasta product image"
+							<img class="card-img-top" src="./images/pasta.png" alt="Pasta product image"
 								loading="lazy" />
 							<div class="card-body p-4">
 								<div class="text-center">
@@ -135,7 +135,7 @@
 					</div>
 					<div class="col mb-5">
 						<article class="card product-card h-100">
-							<img class="card-img-top" src="./images/product.svg"
+							<img class="card-img-top" src="./images/instant-cupcak-mixture.avif"
 								alt="Instant cupcake mixture product image" loading="lazy" />
 							<div class="card-body p-4">
 								<div class="text-center">
@@ -166,7 +166,7 @@
 					<!-- Product Cards -->
 					<div class="col mb-5">
 						<article class="card product-card h-100">
-							<img class="card-img-top" src="./images/product.svg" alt="All-in-1 product image"
+							<img class="card-img-top" src="./images/all-in-1.webp" alt="All-in-1 product image"
 								loading="lazy" />
 							<div class="card-body p-4">
 								<div class="text-center">
@@ -186,7 +186,7 @@
 					</div>
 					<div class="col mb-5">
 						<article class="card product-card h-100">
-							<img class="card-img-top" src="./images/product.svg" alt="Zero makeup kit product image"
+							<img class="card-img-top" src="./images/zero-makeup-kit.png" alt="Zero makeup kit product image"
 								loading="lazy" />
 							<div class="card-body p-4">
 								<div class="text-center">
@@ -206,7 +206,7 @@
 					</div>
 					<div class="col mb-5">
 						<article class="card product-card h-100">
-							<img class="card-img-top" src="./images/product.svg" alt="Lip tints product image"
+							<img class="card-img-top" src="./images/lip-tints.avif" alt="Lip tints product image"
 								loading="lazy" />
 							<div class="card-body p-4">
 								<div class="text-center">
@@ -237,7 +237,7 @@
 					<!-- Product Cards -->
 					<div class="col mb-5">
 						<article class="card product-card h-100">
-							<img class="card-img-top" src="./images/product.svg" alt="Lawn dress product image"
+							<img class="card-img-top" src="./images/lawn-dress.webp" alt="Lawn dress product image"
 								loading="lazy" />
 							<div class="card-body p-4">
 								<div class="text-center">
@@ -257,7 +257,7 @@
 					</div>
 					<div class="col mb-5">
 						<article class="card product-card h-100">
-							<img class="card-img-top" src="./images/product.svg" alt="Lawn-chiffon combo product image"
+							<img class="card-img-top" src="./images/lawn-chiffon-combo.jpg" alt="Lawn-chiffon combo product image"
 								loading="lazy" />
 							<div class="card-body p-4">
 								<div class="text-center">
@@ -277,7 +277,7 @@
 					</div>
 					<div class="col mb-5">
 						<article class="card product-card h-100">
-							<img class="card-img-top" src="./images/product.svg" alt="Toddler Frock product image"
+							<img class="card-img-top" src="./images/toddler-frock.webp" alt="Toddler Frock product image"
 								loading="lazy" />
 							<div class="card-body p-4">
 								<div class="text-center">
@@ -323,6 +323,7 @@
 						<table class="table">
 							<thead>
 								<tr>
+									<th scope="col">Image</th>
 									<th scope="col">Product</th>
 									<th scope="col">Price</th>
 									<th scope="col">Qty.</th>
@@ -354,6 +355,8 @@
 	<!-- Core theme JS-->
 	<script src="js/main.js" type="module"></script>
 	<script src="js/checkout.js" type="module"></script>
+
+	
 </body>
 
 </html>

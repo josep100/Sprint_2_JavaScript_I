@@ -4028,13 +4028,15 @@ textarea.form-control-lg {
 }
 
 .navbar {
-  position: relative;
+  position:fixed;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
+  width: 100%;
+  z-index: 4;
 }
 .navbar > .container,
 .navbar > .container-fluid,
@@ -11286,3 +11288,18 @@ textarea.form-control-lg {
     display: none !important;
   }
 }
+
+/* Clon animado */
+  .flying-img {
+      position: absolute;
+      width: 100px;
+      height: 100px;
+      z-index: 9999;
+      pointer-events: none;
+  }
+
+  .card-img-top:hover{
+      scale: 1.2;
+      transition: scale 1s ease-in-out;
+  }
+

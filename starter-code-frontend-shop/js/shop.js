@@ -91,12 +91,13 @@ export const removeFromCart = (id) => {
 export function generateCartHTML(cart) {
   const html = cart.map(producto => `
     <tr>
-      <td>${producto.name}</td>
+      <td><img src='./images/${producto.image}' style="max-width: 35px; height: auto;"></img></td>
+      <td class="text-truncate">${producto.name}</td>
       <td>${producto.price.toFixed(2)}</td>
       <td>
-        <span class="btn-less" data-id="${producto.id}">−</span>
+        <span class="btn-less btn btn-sm" data-id="${producto.id}">−</span>
         <span class="quantity">${producto.quantity}</span>
-        <span class="btn-more" data-id="${producto.id}">+</span>
+        <span class="btn-more btn btn-sm" data-id="${producto.id}">+</span>
       </td>
       <td>
         ${producto.subtotalWithDiscount

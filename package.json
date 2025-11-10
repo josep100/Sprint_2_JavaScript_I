@@ -17,5 +17,8 @@
   "bugs": {
     "url": "https://github.com/josep100/Sprint_2_JavaScript_I/issues"
   },
-  "homepage": "https://github.com/josep100/Sprint_2_JavaScript_I#readme"
+  "homepage": "https://github.com/josep100/Sprint_2_JavaScript_I#readme",
+  "dependencies": {
+    "gsap": "^3.13.0"
+  }
 }
